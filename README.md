@@ -1,5 +1,7 @@
 ## Configure
 
+Local environment
+
 ```
 npm install
 ```
@@ -9,6 +11,10 @@ Set GITHUB_TOKEN
 ```
 .env.example > .env
 ```
+
+## Github action
+
+Edit `.github/workflows/report.yaml` and set `GITHUB_LOGIN`
 
 ## Start graphql server
 

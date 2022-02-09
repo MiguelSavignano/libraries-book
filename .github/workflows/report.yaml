@@ -1,7 +1,7 @@
-name: Generate npm packages report
+name: Generate libraries report
 on:
   schedule:
-    - cron:  '0 */1 * * *'
+    - cron:  '0 */1 * * *' #TODO
   push:
     branches:
       - '*'
@@ -19,7 +19,7 @@ jobs:
       - run: npx ts-node src/tasks/generateReports.ts
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          GITHUB_LOGIN: coverwallet
+          GITHUB_LOGIN: MiguelSavignano #TODO
 
       - uses: stefanzweifel/git-auto-commit-action@v4.1.1
         with:
