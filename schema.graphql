@@ -1,0 +1,64 @@
+directive @upper on FIELD_DEFINITION
+directive @sizeVersion on FIELD_DEFINITION
+
+type Repository {
+  name: String
+  packageJSON: String
+  packageLockJSON: String
+  gemfileLock: String
+  packageJSONVersion(packageName: String!): String
+  packageLockVersion(packageName: String!): String
+  gemfileLockVersion(gemName: String!): String
+}
+
+type NpmPackages {
+  name: String
+  version: String
+}
+
+type OrgNpmPackage {
+  name: String
+  url: String
+}
+
+input ListFilters {
+  orderBy: [String]
+}
+
+type ReportNodejsRepository {
+  repository: String
+  package: String
+  packageJSON: String
+  packageLock: String
+  versionMin: String
+  versionMax: String
+  version: String
+  "Use this field for order by version"
+  versionSize: String @sizeVersion
+}
+
+type ReportNodejs {
+  name: String
+  repositories: [ReportNodejsRepository]
+}
+
+type ReportRuby {
+  name: String
+  repositories: [ReportRubyRepository]
+}
+
+type ReportRubyRepository {
+  repository: String
+  gem: String
+  gemfileLock: String
+  "Use this field for order by version"
+  versionSize: String @sizeVersion
+}
+
+type Query {
+  orgNpmPackages: [OrgNpmPackage]
+  repositories: [Repository]
+  npmPackages: [NpmPackages]
+  reportsRuby: [ReportRuby]
+  reportsNodejs: [ReportNodejs]
+}
