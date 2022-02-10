@@ -1,7 +1,8 @@
 name: Generate libraries report
 on:
   schedule:
-    - cron:  '0 */1 * * *' #TODO
+    # - cron:  '0 */1 * * *' Every hour.
+    - cron:  '0 1 * * *' # At 01:00
   push:
     branches:
       - '*'
