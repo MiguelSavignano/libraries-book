@@ -6,7 +6,6 @@ Example:
 
 ![image](https://user-images.githubusercontent.com/6641863/153316035-4d73c984-2a89-4761-9dee-fbe83fbad23f.png)
 
-
 ## Configure
 
 Local environment
@@ -23,8 +22,8 @@ Set GITHUB_TOKEN
 
 Libraies to analize:
 
-Nodejs: ./src/data-sources/npmPacakges/allPackages.json
-Ruby: ./src/data-sources/npmPacakges/allGems.json
+- Nodejs: ./src/data-sources/npmPacakges/allPackages.json
+- Ruby: ./src/data-sources/npmPacakges/allGems.json
 
 ## Github action
 
