@@ -23,9 +23,10 @@ interface IFetchAllPacakgesVersions {
   };
 }
 
-const QUERY = `
+// https://docs.github.com/en/graphql/overview/explorer
+const QUERY = (type = 'organization') => `
 query fetchAllPacakgesVersions($login: String!, $cursor: String) {
-  organization(login: $login) {
+  organization: ${type}(login: $login) {
     repositories(first: 50, after: $cursor) {
       pageInfo {
         endCursor
@@ -62,15 +63,18 @@ query fetchAllPacakgesVersions($login: String!, $cursor: String) {
 interface IGithubOptions {
   login: string;
   token: string;
+  type: 'organization' | 'user';
 }
 
 export async function fetchAllPacakgesVersions({
   login,
   token,
+  type = 'organization',
 }: IGithubOptions): Promise<IFetchAllPacakgesVersions> {
   const headers = { authorization: `token ${token}` };
+  console.log({ type });
   const data = await graphqlPaginate(
-    QUERY,
+    QUERY(type),
     { login, headers },
     { nodesPath: 'organization.repositories' },
   );

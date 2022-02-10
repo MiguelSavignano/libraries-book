@@ -11,6 +11,7 @@ async function run() {
   } = await fetchAllPacakgesVersionsWithCache({
     login: process.env.GITHUB_LOGIN,
     token: process.env.GITHUB_TOKEN,
+    type: process.env.GITHUB_LOGIN_TYPE == 'user' ? 'user' : 'organization',
   });
   const repositories = nodes.map((repo) => {
     if (repo.packageJSON) {

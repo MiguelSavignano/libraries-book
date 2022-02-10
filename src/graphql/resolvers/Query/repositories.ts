@@ -13,6 +13,7 @@ export const repositories = async () => {
   const result = await fetchAllPacakgesVersionsWithCache({
     login: process.env.GITHUB_LOGIN,
     token: process.env.GITHUB_TOKEN,
+    type: process.env.GITHUB_LOGIN_TYPE == 'user' ? 'user' : 'organization',
   });
 
   const repositories = result.organization.repositories.nodes;
