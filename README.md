@@ -21,6 +21,8 @@ Ruby: ./src/data-sources/npmPacakges/allGems.json
 
 Edit `.github/workflows/report.yaml` and set `GITHUB_LOGIN`
 
+The reports will be saved in the git repository in the reports folder
+
 ## Start graphql server
 
 ```
