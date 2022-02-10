@@ -2,11 +2,11 @@ import { repositories, filterWithGemfileLock } from './repositories';
 import * as gemfile from 'gemfile';
 import { get } from 'lodash';
 
-const defaultGems: Array<{
+const allGems: Array<{
   name: string;
-}> = require('../../../data-sources/gemSource/defaultGems.json');
+}> = require('../../../data-sources/gemSource/allGems.json');
 
-const allGems = [...defaultGems];
+const allGems = [...allGems];
 
 export const reportsRuby = async (obj, args, context, info) => {
   const repositoriesData = (await repositories()).filter(filterWithGemfileLock);

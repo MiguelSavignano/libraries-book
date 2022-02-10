@@ -12,6 +12,11 @@ Set GITHUB_TOKEN
 .env.example > .env
 ```
 
+Libraies to analize:
+
+Nodejs: ./src/data-sources/npmPacakges/allPackages.json
+Ruby: ./src/data-sources/npmPacakges/allGems.json
+
 ## Github action
 
 Edit `.github/workflows/report.yaml` and set `GITHUB_LOGIN`
