@@ -1,3 +1,12 @@
+# Libraries book
+
+Generate reports in CSV for all Github repositories and the libraries versions. Using Github actions you can store the reports in the same repositorie.
+
+Example:
+
+![image](https://user-images.githubusercontent.com/6641863/153316035-4d73c984-2a89-4761-9dee-fbe83fbad23f.png)
+
+
 ## Configure
 
 Local environment
