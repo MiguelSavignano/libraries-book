@@ -1,6 +1,7 @@
 [
   { "name": "rails" },
-  { "name": "ddtrace" },
   { "name": "rack" },
+  { "name": "rspec" },
+  { "name": "devise" },
   { "name": "haml" }
 ]
